@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option csharp_namespace = "ITIMenofia.Grpc.Protos";
+
+
+service InventoryService {
+  rpc CheckAvailability(CheckAvailabilityRequest) returns (CheckAvailabilityResponse);
+}
+
+message CheckAvailabilityRequest {
+  string Id = 1;
+  int32 quantity = 2;
+}
+
+message CheckAvailabilityResponse {
+  bool available = 1;
+  string message = 2;
+}

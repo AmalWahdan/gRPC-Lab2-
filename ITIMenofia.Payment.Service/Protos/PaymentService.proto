@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "ITIMenofia.Payment.Service.Protos";
+
+service PaymentService {
+  rpc ProcessPayment(PaymentRequest) returns (PaymentResponse) {}
+}
+
+message PaymentRequest {
+  string Id = 1;
+  double amount = 2;
+}
+
+message PaymentResponse {
+  bool success = 1;
+  string message = 2;
+}

@@ -1,0 +1,31 @@
+<h1 class="text-center m-3">Create Order</h1>
+<div class="container">
+  <div class="d-flex justify-content-center">
+    <form (ngSubmit)="OrderForm($event)" class="form w-50">
+      <div class="my-2">
+        <label for="productId">Product ID:</label>
+        <input type="text" id="productId" name="productId" required class="form-control" />
+      </div>
+      <div class="my-2">
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" required class="form-control" />
+      </div>
+      <div class="my-2">
+        <label for="userId">User ID:</label>
+        <input class="form-control" type="text" id="userId" name="userId" required />
+      </div>
+      <div class="my-2">
+        <label for="amount">Amount:</label>
+        <input class="form-control" type="number" id="amount" name="amount" required />
+      </div>
+
+      <div class="d-flex justify-content-center my-2">
+        <button type="submit" class="btn btn-dark px-5 py-2">Order</button>
+      </div>
+
+      <div class="d-flex justify-content-center my-2" *ngIf="Message">
+        <h1 class="text-center lead my-2" [ngClass]="{ 'text-danger': !Error }">{{ Message }}</h1>
+      </div>
+    </form>
+  </div>
+</div>
